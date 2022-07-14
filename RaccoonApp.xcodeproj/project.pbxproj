@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A32BDC4B28808A85005E5F54 /* RaccoonAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC4A28808A85005E5F54 /* RaccoonAppApp.swift */; };
+		A32BDC4D28808A85005E5F54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC4C28808A85005E5F54 /* ContentView.swift */; };
+		A32BDC4F28808A8A005E5F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32BDC4E28808A8A005E5F54 /* Assets.xcassets */; };
+		A32BDC5228808A8A005E5F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32BDC5128808A8A005E5F54 /* Preview Assets.xcassets */; };
+		A32BDC5C28808A8A005E5F54 /* RaccoonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC5B28808A8A005E5F54 /* RaccoonAppTests.swift */; };
+		A32BDC6628808A8A005E5F54 /* RaccoonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC6528808A8A005E5F54 /* RaccoonAppUITests.swift */; };
+		A32BDC6828808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC6728808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A32BDC5828808A8A005E5F54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A32BDC3F28808A85005E5F54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A32BDC4628808A85005E5F54;
+			remoteInfo = RaccoonApp;
+		};
+		A32BDC6228808A8A005E5F54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A32BDC3F28808A85005E5F54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A32BDC4628808A85005E5F54;
+			remoteInfo = RaccoonApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A32BDC4728808A85005E5F54 /* RaccoonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaccoonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32BDC4A28808A85005E5F54 /* RaccoonAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonAppApp.swift; sourceTree = "<group>"; };
+		A32BDC4C28808A85005E5F54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A32BDC4E28808A8A005E5F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A32BDC5128808A8A005E5F54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A32BDC5728808A8A005E5F54 /* RaccoonAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32BDC5B28808A8A005E5F54 /* RaccoonAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonAppTests.swift; sourceTree = "<group>"; };
+		A32BDC6128808A8A005E5F54 /* RaccoonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A32BDC6528808A8A005E5F54 /* RaccoonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonAppUITests.swift; sourceTree = "<group>"; };
+		A32BDC6728808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A32BDC4428808A85005E5F54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A32BDC5428808A8A005E5F54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A32BDC5E28808A8A005E5F54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A32BDC3E28808A85005E5F54 = {
+			isa = PBXGroup;
+			children = (
+				A32BDC4928808A85005E5F54 /* RaccoonApp */,
+				A32BDC5A28808A8A005E5F54 /* RaccoonAppTests */,
+				A32BDC6428808A8A005E5F54 /* RaccoonAppUITests */,
+				A32BDC4828808A85005E5F54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A32BDC4828808A85005E5F54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A32BDC4728808A85005E5F54 /* RaccoonApp.app */,
+				A32BDC5728808A8A005E5F54 /* RaccoonAppTests.xctest */,
+				A32BDC6128808A8A005E5F54 /* RaccoonAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A32BDC4928808A85005E5F54 /* RaccoonApp */ = {
+			isa = PBXGroup;
+			children = (
+				A32BDC4A28808A85005E5F54 /* RaccoonAppApp.swift */,
+				A32BDC4C28808A85005E5F54 /* ContentView.swift */,
+				A32BDC4E28808A8A005E5F54 /* Assets.xcassets */,
+				A32BDC5028808A8A005E5F54 /* Preview Content */,
+			);
+			path = RaccoonApp;
+			sourceTree = "<group>";
+		};
+		A32BDC5028808A8A005E5F54 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A32BDC5128808A8A005E5F54 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A32BDC5A28808A8A005E5F54 /* RaccoonAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A32BDC5B28808A8A005E5F54 /* RaccoonAppTests.swift */,
+			);
+			path = RaccoonAppTests;
+			sourceTree = "<group>";
+		};
+		A32BDC6428808A8A005E5F54 /* RaccoonAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A32BDC6528808A8A005E5F54 /* RaccoonAppUITests.swift */,
+				A32BDC6728808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift */,
+			);
+			path = RaccoonAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A32BDC4628808A85005E5F54 /* RaccoonApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A32BDC6B28808A8A005E5F54 /* Build configuration list for PBXNativeTarget "RaccoonApp" */;
+			buildPhases = (
+				A32BDC4328808A85005E5F54 /* Sources */,
+				A32BDC4428808A85005E5F54 /* Frameworks */,
+				A32BDC4528808A85005E5F54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaccoonApp;
+			productName = RaccoonApp;
+			productReference = A32BDC4728808A85005E5F54 /* RaccoonApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A32BDC5628808A8A005E5F54 /* RaccoonAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A32BDC6E28808A8A005E5F54 /* Build configuration list for PBXNativeTarget "RaccoonAppTests" */;
+			buildPhases = (
+				A32BDC5328808A8A005E5F54 /* Sources */,
+				A32BDC5428808A8A005E5F54 /* Frameworks */,
+				A32BDC5528808A8A005E5F54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A32BDC5928808A8A005E5F54 /* PBXTargetDependency */,
+			);
+			name = RaccoonAppTests;
+			productName = RaccoonAppTests;
+			productReference = A32BDC5728808A8A005E5F54 /* RaccoonAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A32BDC6028808A8A005E5F54 /* RaccoonAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A32BDC7128808A8A005E5F54 /* Build configuration list for PBXNativeTarget "RaccoonAppUITests" */;
+			buildPhases = (
+				A32BDC5D28808A8A005E5F54 /* Sources */,
+				A32BDC5E28808A8A005E5F54 /* Frameworks */,
+				A32BDC5F28808A8A005E5F54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A32BDC6328808A8A005E5F54 /* PBXTargetDependency */,
+			);
+			name = RaccoonAppUITests;
+			productName = RaccoonAppUITests;
+			productReference = A32BDC6128808A8A005E5F54 /* RaccoonAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A32BDC3F28808A85005E5F54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					A32BDC4628808A85005E5F54 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					A32BDC5628808A8A005E5F54 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = A32BDC4628808A85005E5F54;
+					};
+					A32BDC6028808A8A005E5F54 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = A32BDC4628808A85005E5F54;
+					};
+				};
+			};
+			buildConfigurationList = A32BDC4228808A85005E5F54 /* Build configuration list for PBXProject "RaccoonApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A32BDC3E28808A85005E5F54;
+			productRefGroup = A32BDC4828808A85005E5F54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A32BDC4628808A85005E5F54 /* RaccoonApp */,
+				A32BDC5628808A8A005E5F54 /* RaccoonAppTests */,
+				A32BDC6028808A8A005E5F54 /* RaccoonAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A32BDC4528808A85005E5F54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A32BDC5228808A8A005E5F54 /* Preview Assets.xcassets in Resources */,
+				A32BDC4F28808A8A005E5F54 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A32BDC5528808A8A005E5F54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A32BDC5F28808A8A005E5F54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A32BDC4328808A85005E5F54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A32BDC4D28808A85005E5F54 /* ContentView.swift in Sources */,
+				A32BDC4B28808A85005E5F54 /* RaccoonAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A32BDC5328808A8A005E5F54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A32BDC5C28808A8A005E5F54 /* RaccoonAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A32BDC5D28808A8A005E5F54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A32BDC6828808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift in Sources */,
+				A32BDC6628808A8A005E5F54 /* RaccoonAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A32BDC5928808A8A005E5F54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A32BDC4628808A85005E5F54 /* RaccoonApp */;
+			targetProxy = A32BDC5828808A8A005E5F54 /* PBXContainerItemProxy */;
+		};
+		A32BDC6328808A8A005E5F54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A32BDC4628808A85005E5F54 /* RaccoonApp */;
+			targetProxy = A32BDC6228808A8A005E5F54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A32BDC6928808A8A005E5F54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A32BDC6A28808A8A005E5F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A32BDC6C28808A8A005E5F54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RaccoonApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9AT8K45FD8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A32BDC6D28808A8A005E5F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RaccoonApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9AT8K45FD8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A32BDC6F28808A8A005E5F54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AT8K45FD8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaccoonApp.app/RaccoonApp";
+			};
+			name = Debug;
+		};
+		A32BDC7028808A8A005E5F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AT8K45FD8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaccoonApp.app/RaccoonApp";
+			};
+			name = Release;
+		};
+		A32BDC7228808A8A005E5F54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AT8K45FD8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaccoonApp;
+			};
+			name = Debug;
+		};
+		A32BDC7328808A8A005E5F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AT8K45FD8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaccoonApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A32BDC4228808A85005E5F54 /* Build configuration list for PBXProject "RaccoonApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A32BDC6928808A8A005E5F54 /* Debug */,
+				A32BDC6A28808A8A005E5F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A32BDC6B28808A8A005E5F54 /* Build configuration list for PBXNativeTarget "RaccoonApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A32BDC6C28808A8A005E5F54 /* Debug */,
+				A32BDC6D28808A8A005E5F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A32BDC6E28808A8A005E5F54 /* Build configuration list for PBXNativeTarget "RaccoonAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A32BDC6F28808A8A005E5F54 /* Debug */,
+				A32BDC7028808A8A005E5F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A32BDC7128808A8A005E5F54 /* Build configuration list for PBXNativeTarget "RaccoonAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A32BDC7228808A8A005E5F54 /* Debug */,
+				A32BDC7328808A8A005E5F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A32BDC3F28808A85005E5F54 /* Project object */;
+}
