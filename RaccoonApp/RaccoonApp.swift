@@ -11,7 +11,7 @@ import SwiftUI
 struct RaccoonApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(appState: AppState())
+            ContentView().environmentObject(AppState())
         }
     }
 }

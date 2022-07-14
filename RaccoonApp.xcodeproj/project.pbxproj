@@ -17,6 +17,7 @@
 		A32BDC7528808AB3005E5F54 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC7428808AB3005E5F54 /* Habit.swift */; };
 		A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC7628808BB3005E5F54 /* AppState.swift */; };
 		A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D752880BA4C00B1C8A0 /* Helpers.swift */; };
+		A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		A32BDC7428808AB3005E5F54 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		A32BDC7628808BB3005E5F54 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A36D7D752880BA4C00B1C8A0 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +102,13 @@
 		A32BDC4928808A85005E5F54 /* RaccoonApp */ = {
 			isa = PBXGroup;
 			children = (
+				A36D7D7A2880DB8B00B1C8A0 /* Helpers */,
+				A36D7D792880DB8000B1C8A0 /* Model */,
+				A36D7D782880DB7700B1C8A0 /* ViewModel */,
+				A36D7D772880DB6600B1C8A0 /* View */,
 				A32BDC4A28808A85005E5F54 /* RaccoonApp.swift */,
-				A32BDC4C28808A85005E5F54 /* ContentView.swift */,
 				A32BDC4E28808A8A005E5F54 /* Assets.xcassets */,
 				A32BDC5028808A8A005E5F54 /* Preview Content */,
-				A32BDC7428808AB3005E5F54 /* Habit.swift */,
-				A32BDC7628808BB3005E5F54 /* AppState.swift */,
-				A36D7D752880BA4C00B1C8A0 /* Helpers.swift */,
 			);
 			path = RaccoonApp;
 			sourceTree = "<group>";
@@ -134,6 +136,39 @@
 				A32BDC6728808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift */,
 			);
 			path = RaccoonAppUITests;
+			sourceTree = "<group>";
+		};
+		A36D7D772880DB6600B1C8A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A32BDC4C28808A85005E5F54 /* ContentView.swift */,
+				A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A36D7D782880DB7700B1C8A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A32BDC7628808BB3005E5F54 /* AppState.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A36D7D792880DB8000B1C8A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A32BDC7428808AB3005E5F54 /* Habit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A36D7D7A2880DB8B00B1C8A0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A36D7D752880BA4C00B1C8A0 /* Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +306,7 @@
 				A32BDC4B28808A85005E5F54 /* RaccoonApp.swift in Sources */,
 				A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */,
 				A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */,
+				A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
