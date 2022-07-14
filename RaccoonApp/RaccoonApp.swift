@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct RaccoonAppApp: App {
+struct RaccoonApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(appState: AppState())
         }
     }
 }

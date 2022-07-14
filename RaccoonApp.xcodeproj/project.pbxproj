@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A32BDC4B28808A85005E5F54 /* RaccoonAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC4A28808A85005E5F54 /* RaccoonAppApp.swift */; };
+		A32BDC4B28808A85005E5F54 /* RaccoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC4A28808A85005E5F54 /* RaccoonApp.swift */; };
 		A32BDC4D28808A85005E5F54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC4C28808A85005E5F54 /* ContentView.swift */; };
 		A32BDC4F28808A8A005E5F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32BDC4E28808A8A005E5F54 /* Assets.xcassets */; };
 		A32BDC5228808A8A005E5F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32BDC5128808A8A005E5F54 /* Preview Assets.xcassets */; };
 		A32BDC5C28808A8A005E5F54 /* RaccoonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC5B28808A8A005E5F54 /* RaccoonAppTests.swift */; };
 		A32BDC6628808A8A005E5F54 /* RaccoonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC6528808A8A005E5F54 /* RaccoonAppUITests.swift */; };
 		A32BDC6828808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC6728808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift */; };
+		A32BDC7528808AB3005E5F54 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC7428808AB3005E5F54 /* Habit.swift */; };
+		A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC7628808BB3005E5F54 /* AppState.swift */; };
+		A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D752880BA4C00B1C8A0 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		A32BDC4728808A85005E5F54 /* RaccoonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaccoonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A32BDC4A28808A85005E5F54 /* RaccoonAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonAppApp.swift; sourceTree = "<group>"; };
+		A32BDC4A28808A85005E5F54 /* RaccoonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonApp.swift; sourceTree = "<group>"; };
 		A32BDC4C28808A85005E5F54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A32BDC4E28808A8A005E5F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A32BDC5128808A8A005E5F54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -44,6 +47,9 @@
 		A32BDC6128808A8A005E5F54 /* RaccoonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaccoonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32BDC6528808A8A005E5F54 /* RaccoonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonAppUITests.swift; sourceTree = "<group>"; };
 		A32BDC6728808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A32BDC7428808AB3005E5F54 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		A32BDC7628808BB3005E5F54 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A36D7D752880BA4C00B1C8A0 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +100,13 @@
 		A32BDC4928808A85005E5F54 /* RaccoonApp */ = {
 			isa = PBXGroup;
 			children = (
-				A32BDC4A28808A85005E5F54 /* RaccoonAppApp.swift */,
+				A32BDC4A28808A85005E5F54 /* RaccoonApp.swift */,
 				A32BDC4C28808A85005E5F54 /* ContentView.swift */,
 				A32BDC4E28808A8A005E5F54 /* Assets.xcassets */,
 				A32BDC5028808A8A005E5F54 /* Preview Content */,
+				A32BDC7428808AB3005E5F54 /* Habit.swift */,
+				A32BDC7628808BB3005E5F54 /* AppState.swift */,
+				A36D7D752880BA4C00B1C8A0 /* Helpers.swift */,
 			);
 			path = RaccoonApp;
 			sourceTree = "<group>";
@@ -257,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32BDC7528808AB3005E5F54 /* Habit.swift in Sources */,
 				A32BDC4D28808A85005E5F54 /* ContentView.swift in Sources */,
-				A32BDC4B28808A85005E5F54 /* RaccoonAppApp.swift in Sources */,
+				A32BDC4B28808A85005E5F54 /* RaccoonApp.swift in Sources */,
+				A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */,
+				A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RaccoonApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 9AT8K45FD8;
+				DEVELOPMENT_TEAM = 2YCL7GLD8Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -430,7 +442,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ninarimsky.RaccoonApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
