@@ -14,10 +14,12 @@ struct HabitItem: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 2) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(habit.title).lineLimit(5)
-                Text(habit.description).lineLimit(5)
-            }
+            NavigationLink(destination: EditView(habit: habit)) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(habit.title).lineLimit(5)
+                    Text(habit.description).lineLimit(5)
+                }
+            }.foregroundColor(.primary)
             Spacer()
             Image(systemName: habit.wasAchievedOn(date) ? "circle.fill" : "circle.dotted").frame(width: 30, height: 30)
                 .onTapGesture {

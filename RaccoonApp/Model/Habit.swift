@@ -19,6 +19,7 @@ class Habit: Hashable, Identifiable, ObservableObject {
     @Published var startDay: String = ""
     @Published var endDay: String = ""
     @Published var achievedOn = Set<String>()
+    @Published var isEditing: Bool = false
 
     
     init() {
@@ -42,6 +43,9 @@ class Habit: Hashable, Identifiable, ObservableObject {
     }
     
     func show(on date: Date) -> Bool {
+        if isEditing {
+            return true
+        }
         if Calendar.current.numberOfDaysBetween(Helpers.stringToDate(startDay), and: date) < 0 {
             return false
         }

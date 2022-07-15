@@ -17,7 +17,7 @@ class AppState: ObservableObject {
         habits = Helpers.mockHabits()
         for habit in habits {
             habit.objectWillChange
-                .sink(receiveValue: { _ in self.objectWillChange.send() })
+                .sink(receiveValue: { [weak self] in self?.objectWillChange.send() })
                 .store(in: &subscriptions)
         }
     }
@@ -25,7 +25,11 @@ class AppState: ObservableObject {
     func add(habit: Habit) {
         habits.append(habit)
         habit.objectWillChange
-            .sink(receiveValue: { _ in self.objectWillChange.send() })
+            .sink(receiveValue: { [weak self] in self?.objectWillChange.send() })
             .store(in: &subscriptions)
+    }
+    
+    func delete(habit: Habit) {
+        habits.removeAll(where: {$0.id == habit.id})
     }
 }

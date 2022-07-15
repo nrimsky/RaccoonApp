@@ -35,9 +35,17 @@ struct ContentView: View {
                 }
                 .padding(12)
             }.navigationBarTitle(Helpers.dateToString(date)).toolbar {
-                Button(action: {
-                    showDatePicker.toggle()
-                }){Image(systemName: "calendar")}
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showDatePicker.toggle()
+                    }){Image(systemName: "calendar")}
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: AddNewView()) {
+                        Image(systemName: "plus")
+                    }
+                }
+                
             }
         }
     }

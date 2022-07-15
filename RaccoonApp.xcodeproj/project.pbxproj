@@ -18,6 +18,8 @@
 		A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC7628808BB3005E5F54 /* AppState.swift */; };
 		A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D752880BA4C00B1C8A0 /* Helpers.swift */; };
 		A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */; };
+		A36D7D802880E6D300B1C8A0 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */; };
+		A36D7D822880EBE700B1C8A0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D812880EBE700B1C8A0 /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		A32BDC7628808BB3005E5F54 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A36D7D752880BA4C00B1C8A0 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitItem.swift; sourceTree = "<group>"; };
+		A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
+		A36D7D812880EBE700B1C8A0 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			children = (
 				A32BDC4C28808A85005E5F54 /* ContentView.swift */,
 				A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */,
+				A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */,
+				A36D7D812880EBE700B1C8A0 /* EditView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 			files = (
 				A32BDC7528808AB3005E5F54 /* Habit.swift in Sources */,
 				A32BDC4D28808A85005E5F54 /* ContentView.swift in Sources */,
+				A36D7D822880EBE700B1C8A0 /* EditView.swift in Sources */,
+				A36D7D802880E6D300B1C8A0 /* AddNewView.swift in Sources */,
 				A32BDC4B28808A85005E5F54 /* RaccoonApp.swift in Sources */,
 				A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */,
 				A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */,
