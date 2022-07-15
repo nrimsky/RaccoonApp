@@ -50,6 +50,7 @@ struct EditView: View {
             habit.isEditing = true
         }
         .onDisappear {
+            try? appState.persist()
             habit.isEditing = false
         }
     }

@@ -15,6 +15,7 @@ struct Helpers {
         return formatter
     }()
     
+    static let persistenceManager = PersistenceManager()
     
     static func dateToString(_ date: Date) -> String {
         return dateFromatter.string(from: date)
@@ -36,6 +37,11 @@ struct Helpers {
         h2.startDay = Helpers.dateToString(Date())
         h2.achievedOn = Set([Helpers.dateToString(Date())])
         return [h1, h2]
+    }
+    
+    static func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 
 }

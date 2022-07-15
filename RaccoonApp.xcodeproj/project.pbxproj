@@ -20,6 +20,7 @@
 		A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */; };
 		A36D7D802880E6D300B1C8A0 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */; };
 		A36D7D822880EBE700B1C8A0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D812880EBE700B1C8A0 /* EditView.swift */; };
+		A36D7D8428818E4F00B1C8A0 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8328818E4E00B1C8A0 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitItem.swift; sourceTree = "<group>"; };
 		A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
 		A36D7D812880EBE700B1C8A0 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		A36D7D8328818E4E00B1C8A0 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				A36D7D752880BA4C00B1C8A0 /* Helpers.swift */,
+				A36D7D8328818E4E00B1C8A0 /* PersistenceManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				A36D7D802880E6D300B1C8A0 /* AddNewView.swift in Sources */,
 				A32BDC4B28808A85005E5F54 /* RaccoonApp.swift in Sources */,
 				A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */,
+				A36D7D8428818E4F00B1C8A0 /* PersistenceManager.swift in Sources */,
 				A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */,
 				A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */,
 			);

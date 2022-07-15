@@ -11,6 +11,7 @@ struct HabitItem: View {
     
     @ObservedObject var habit: Habit
     @Binding var date: Date
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         HStack(alignment: .center, spacing: 2) {
@@ -29,6 +30,7 @@ struct HabitItem: View {
                         } else {
                             habit.markAchieved(on: date)
                         }
+                        try? appState.persist()
                     }
                 }
         }

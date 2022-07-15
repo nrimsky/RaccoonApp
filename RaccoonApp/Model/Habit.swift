@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Habit: Hashable, Identifiable, ObservableObject {
+class Habit: Hashable, Identifiable, ObservableObject, Codable {
     
     static func == (lhs: Habit, rhs: Habit) -> Bool {
         return (lhs.id == rhs.id)
@@ -24,6 +24,24 @@ class Habit: Hashable, Identifiable, ObservableObject {
     
     init() {
         self.startDay = Helpers.dateToString(Date())
+    }
+
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        title = try values.decode(String.self, forKey: .title)
+        description = try values.decode(String.self, forKey: .description)
+        startDay = try values.decode(String.self, forKey: .startDay)
+        endDay = try values.decode(String.self, forKey: .endDay)
+        achievedOn = try values.decode(Set<String>.self, forKey: .achievedOn)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(title, forKey: .title)
+        try container.encode(description, forKey: .description)
+        try container.encode(startDay, forKey: .startDay)
+        try container.encode(endDay, forKey: .endDay)
+        try container.encode(achievedOn, forKey: .achievedOn)
     }
 
     func hash(into hasher: inout Hasher) {
@@ -57,4 +75,13 @@ class Habit: Hashable, Identifiable, ObservableObject {
         return true
     }
     
+    enum CodingKeys: String, CodingKey {
+        case title
+        case description
+        case startDay
+        case endDay
+        case achievedOn
+    }
+    
 }
+
