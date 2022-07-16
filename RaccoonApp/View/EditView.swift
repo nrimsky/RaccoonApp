@@ -26,33 +26,24 @@ struct EditView: View {
         return ZStack(alignment: .bottom) {
             Form {
                 Section(header: Text("Habit")) {
-                    TextField("Title", text: $habit.title)
-                    TextField("Description", text: $habit.description)
+                    TextField("What do you want to get done?", text: $habit.title).font(Font.custom(Helpers.fontName, size: UIFont.labelFontSize))
                 }
                 Section(header: Text("Dates")) {
                     DatePicker("Start Date", selection: startDate, in: ...endDate.wrappedValue, displayedComponents: [.date])
                     if habit.endDay == "" {
                         Text("No end date")
-                        Button("Add End Date") {
-                            habit.endDay = habit.startDay
-                        }
+                        AppButton(type: .normal, onPress: {habit.endDay = habit.startDay}, text: "Add End Date")
                     } else {
                         DatePicker("End Date", selection: endDate, in: startDate.wrappedValue...,
                                    displayedComponents: [.date])
-                        Button("No End Date") {
-                            habit.endDay = ""
-                        }
+                        AppButton(type: .normal, onPress: {habit.endDay = ""}, text: "No End Date")
                     }
                 }
                 Section() {
-                    Button("Done") {
-                        presentationMode.wrappedValue.dismiss()
-                    }
+                    AppButton(type: .normal, onPress: {presentationMode.wrappedValue.dismiss()}, text: "Done")
                 }
                 Section() {
-                    Button("Delete", role: .destructive) {
-                        showingDeleteAlert = true
-                    }
+                    AppButton(type: .destructive, onPress: {showingDeleteAlert = true}, text: "Delete")
                 }.alert("Are you sure you want to delete this habit ?", isPresented: $showingDeleteAlert) {
                     Button("Cancel", role: .cancel) {
                         showingDeleteAlert = false

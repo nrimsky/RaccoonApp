@@ -9,6 +9,12 @@ import SwiftUI
 
 @main
 struct RaccoonApp: App {
+    
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: Helpers.fontName, size: 24)!]
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: Helpers.fontName, size: UIFont.labelFontSize)!]
+    }
+    
     var body: some Scene {
         if let state = try? AppState.load() {
             return WindowGroup {

@@ -21,30 +21,15 @@ class AppState: ObservableObject, Codable {
     @Published var habitsToShow: [Habit] = []
     @Published var viewingDate: Date = Date()
     
-    private var habitsToShowPublisher: AnyPublisher<[Habit],Never> {
-        Publishers.CombineLatest($habits, $viewingDate).map { habits, date in
-            return habits.filter {
-                $0.show(on: date)
-            }
-        }.eraseToAnyPublisher()
-    }
-    
     var subscriptions = Set<AnyCancellable>()
     
-    init() {
-        habitsToShowPublisher
-            .receive(on: RunLoop.main)
-            .assign(to: \.habitsToShow, on: self)
-            .store(in: &subscriptions)
-    }
+    init() {}
     
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        habits = try values.decode([Habit].self, forKey: .habits)
-        habitsToShowPublisher
-            .receive(on: RunLoop.main)
-            .assign(to: \.habitsToShow, on: self)
-            .store(in: &subscriptions)
+        for habit in try values.decode([Habit].self, forKey: .habits) {
+            add(habit: habit)
+        }
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -55,7 +40,9 @@ class AppState: ObservableObject, Codable {
     func add(habit: Habit) {
         habits.append(habit)
         habit.objectWillChange
-            .sink(receiveValue: { [weak self] in self?.objectWillChange.send() })
+            .sink(receiveValue: { [weak self] in
+                self?.objectWillChange.send()
+            })
             .store(in: &subscriptions)
         try? persist()
     }
@@ -68,7 +55,7 @@ class AppState: ObservableObject, Codable {
     enum CodingKeys: String, CodingKey {
         case habits
     }
-        
+    
     func persist() throws {
         try Helpers.persistenceManager.saveData(data: self)
     }
@@ -77,4 +64,4 @@ class AppState: ObservableObject, Codable {
         return try Helpers.persistenceManager.getData()
     }
     
- }
+}

@@ -5,9 +5,13 @@
 //  Created by Nina Rimsky on 14/07/2022.
 //
 
+import SwiftUI
 import Foundation
 
 struct Helpers {
+    
+    static let fontName = "PatrickHand-Regular"
+    static let appFont = UIFont(name: Helpers.fontName, size: UIFont.labelFontSize)
     
     static var dateFromatter: DateFormatter  = {
         let formatter = DateFormatter()
@@ -29,11 +33,9 @@ struct Helpers {
         let h1 = Habit()
         let h2 = Habit()
         h1.title = "Brush teeth"
-        h1.description = "Brush teeth for 2 minutes twice in a day"
         h1.startDay = Helpers.dateToString(Date())
         h1.achievedOn = Set([Helpers.dateToString(Date())])
         h2.title = "Squats"
-        h2.description = "Do 30 body weight squats"
         h2.startDay = Helpers.dateToString(Date())
         h2.achievedOn = Set([Helpers.dateToString(Date())])
         return [h1, h2]

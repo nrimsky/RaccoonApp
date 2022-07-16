@@ -20,26 +20,21 @@ struct AddNewView: View {
         ZStack(alignment: .bottom) {
             Form {
                 Section(header: Text("Habit")) {
-                    TextField("Title", text: $habit.title)
-                    TextField("Description", text: $habit.description)
+                    TextField("What do you want to get done?", text: $habit.title).font(Font.custom(Helpers.fontName, size: UIFont.labelFontSize))
                 }
                 Section(header: Text("Dates")) {
                     DatePicker("Start Date", selection: $startDate, in: ...endDate, displayedComponents: [.date])
                     if noEndDate {
                         Text("No end date")
-                        Button("Add End Date") {
-                            noEndDate = false
-                        }
+                        AppButton(type: .normal, onPress: {noEndDate = false}, text: "Add End Date")
                     } else {
                         DatePicker("End Date", selection: $endDate, in: startDate...,
                                    displayedComponents: [.date])
-                        Button("No End Date") {
-                            noEndDate = true
-                        }
+                        AppButton(type: .normal, onPress: {noEndDate = true}, text: "No End Date")
                     }
                 }
                 Section() {
-                    Button("Save"){
+                    AppButton(type: .normal, onPress: {
                         habit.startDay = Helpers.dateToString(startDate)
                         if noEndDate {
                             habit.endDay = ""
@@ -48,7 +43,7 @@ struct AddNewView: View {
                         }
                         appState.add(habit: habit)
                         presentationMode.wrappedValue.dismiss()
-                    }
+                    }, text: "Save")
                 }
             }
             Image("StandingRaccoon2")

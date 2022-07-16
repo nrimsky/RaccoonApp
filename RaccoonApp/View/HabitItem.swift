@@ -20,13 +20,9 @@ struct HabitItem: View {
                     HStack(alignment: .center, spacing: 2) {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(habit.title)
-                                .font(.title2)
-                                .fontWeight(.medium)
+                                .font(Font.custom(Helpers.fontName, size: 21))
                                 .lineLimit(5)
                                 .foregroundColor(.primary)
-                                .multilineTextAlignment(.leading)
-                            Text(habit.description)
-                                .lineLimit(5)
                                 .multilineTextAlignment(.leading)
                         }
                         Spacer()

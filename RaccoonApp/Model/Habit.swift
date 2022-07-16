@@ -15,7 +15,6 @@ class Habit: Hashable, Identifiable, ObservableObject, Codable {
     
     let id = UUID()
     @Published var title: String = ""
-    @Published var description: String = ""
     @Published var startDay: String = ""
     @Published var endDay: String = ""
     @Published var achievedOn = Set<String>()
@@ -29,7 +28,6 @@ class Habit: Hashable, Identifiable, ObservableObject, Codable {
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         title = try values.decode(String.self, forKey: .title)
-        description = try values.decode(String.self, forKey: .description)
         startDay = try values.decode(String.self, forKey: .startDay)
         endDay = try values.decode(String.self, forKey: .endDay)
         achievedOn = try values.decode(Set<String>.self, forKey: .achievedOn)
@@ -38,7 +36,6 @@ class Habit: Hashable, Identifiable, ObservableObject, Codable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(title, forKey: .title)
-        try container.encode(description, forKey: .description)
         try container.encode(startDay, forKey: .startDay)
         try container.encode(endDay, forKey: .endDay)
         try container.encode(achievedOn, forKey: .achievedOn)
@@ -77,7 +74,6 @@ class Habit: Hashable, Identifiable, ObservableObject, Codable {
     
     enum CodingKeys: String, CodingKey {
         case title
-        case description
         case startDay
         case endDay
         case achievedOn

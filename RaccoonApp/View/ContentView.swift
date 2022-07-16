@@ -13,27 +13,39 @@ struct ContentView: View {
     @State var showDatePicker = false
     
     var body: some View {
-        NavigationView {
+        let showHabits = appState.habits.filter{$0.show(on: appState.viewingDate) }
+        return NavigationView {
             ZStack(alignment: .bottom) {
-                Image("StandingRaccoon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
+                if showHabits.filter {!$0.wasAchievedOn(appState.viewingDate)}.count == 0 {
+                    Image("StandingRaccoon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                } else {
+                    Image("StandingRaccoon2")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                }
                 ScrollView {
-                    VStack(spacing: 0) {
+                    VStack(alignment: .center, spacing: 0) {
                         if showDatePicker {
-                            Button("Go to today") { appState.viewingDate = Date() }
                             DatePicker(
                                 "Start Date",
                                 selection: $appState.viewingDate,
                                 displayedComponents: [.date]
                             )
                             .datePickerStyle(.graphical)
-                            .padding(6)
-                            
+                            .frame(width: 300, height: 300)
+                            .padding([.leading, .trailing, .top], 24)
+                            .overlay (
+                                RoundedRectangle(cornerRadius: 4)
+                                    .stroke(.black, lineWidth: 1)
+                            )
+                            .padding(.bottom, 24)
                         }
                         Divider()
-                        ForEach(appState.habitsToShow) { habit in
+                        ForEach(showHabits) { habit in
                             HabitItem(habit: habit, date: $appState.viewingDate)
                         }
                         Spacer()
@@ -43,12 +55,10 @@ struct ContentView: View {
                 }
             }.navigationBarTitle("\(Helpers.dateToString(appState.viewingDate))").toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        showDatePicker.toggle()
-                    }){
-                        if showDatePicker {
-                            Text("Hide calendar")
-                        } else {
+                    if showDatePicker {
+                        AppButton(type: .normal, onPress: {showDatePicker.toggle()}, text: "Hide calendar")
+                    } else {
+                        Button(action: {showDatePicker.toggle()}){
                             Image(systemName: "calendar")
                         }
                     }
@@ -57,7 +67,7 @@ struct ContentView: View {
                     Button(action: {
                         appState.viewingDate = Date()
                     }){
-                        Image("RaccoonFace").resizable().frame(width: 36, height: 36, alignment: .leading)
+                        Image("RaccoonFace").resizable().frame(width: 42, height: 42, alignment: .leading)
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {

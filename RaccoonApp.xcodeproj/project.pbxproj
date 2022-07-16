@@ -21,6 +21,8 @@
 		A36D7D802880E6D300B1C8A0 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */; };
 		A36D7D822880EBE700B1C8A0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D812880EBE700B1C8A0 /* EditView.swift */; };
 		A36D7D8428818E4F00B1C8A0 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8328818E4E00B1C8A0 /* PersistenceManager.swift */; };
+		A36D7D8728835E8D00B1C8A0 /* PatrickHand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36D7D8628835E8C00B1C8A0 /* PatrickHand-Regular.ttf */; };
+		A36D7D8A2883611C00B1C8A0 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D892883611C00B1C8A0 /* AppButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
 		A36D7D812880EBE700B1C8A0 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		A36D7D8328818E4E00B1C8A0 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		A36D7D8628835E8C00B1C8A0 /* PatrickHand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatrickHand-Regular.ttf"; sourceTree = "<group>"; };
+		A36D7D8828835EBA00B1C8A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A36D7D892883611C00B1C8A0 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,8 @@
 		A32BDC4928808A85005E5F54 /* RaccoonApp */ = {
 			isa = PBXGroup;
 			children = (
+				A36D7D8828835EBA00B1C8A0 /* Info.plist */,
+				A36D7D8528835E5000B1C8A0 /* Fonts */,
 				A36D7D7A2880DB8B00B1C8A0 /* Helpers */,
 				A36D7D792880DB8000B1C8A0 /* Model */,
 				A36D7D782880DB7700B1C8A0 /* ViewModel */,
@@ -151,6 +158,7 @@
 				A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */,
 				A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */,
 				A36D7D812880EBE700B1C8A0 /* EditView.swift */,
+				A36D7D892883611C00B1C8A0 /* AppButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +186,14 @@
 				A36D7D8328818E4E00B1C8A0 /* PersistenceManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A36D7D8528835E5000B1C8A0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A36D7D8628835E8C00B1C8A0 /* PatrickHand-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +302,7 @@
 			files = (
 				A32BDC5228808A8A005E5F54 /* Preview Assets.xcassets in Resources */,
 				A32BDC4F28808A8A005E5F54 /* Assets.xcassets in Resources */,
+				A36D7D8728835E8D00B1C8A0 /* PatrickHand-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +336,7 @@
 				A36D7D8428818E4F00B1C8A0 /* PersistenceManager.swift in Sources */,
 				A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */,
 				A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */,
+				A36D7D8A2883611C00B1C8A0 /* AppButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +498,7 @@
 				DEVELOPMENT_TEAM = 9AT8K45FD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RaccoonApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -510,6 +529,7 @@
 				DEVELOPMENT_TEAM = 9AT8K45FD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RaccoonApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
