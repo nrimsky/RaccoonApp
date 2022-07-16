@@ -18,13 +18,33 @@ class AppState: ObservableObject, Codable {
     static let persistFilename = "appState.json"
     
     @Published var habits: [Habit] = []
+    @Published var habitsToShow: [Habit] = []
+    @Published var viewingDate: Date = Date()
+    
+    private var habitsToShowPublisher: AnyPublisher<[Habit],Never> {
+        Publishers.CombineLatest($habits, $viewingDate).map { habits, date in
+            return habits.filter {
+                $0.show(on: date)
+            }
+        }.eraseToAnyPublisher()
+    }
+    
     var subscriptions = Set<AnyCancellable>()
     
-    init() { }
+    init() {
+        habitsToShowPublisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.habitsToShow, on: self)
+            .store(in: &subscriptions)
+    }
     
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         habits = try values.decode([Habit].self, forKey: .habits)
+        habitsToShowPublisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.habitsToShow, on: self)
+            .store(in: &subscriptions)
     }
     
     public func encode(to encoder: Encoder) throws {

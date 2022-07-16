@@ -20,39 +20,53 @@ struct EditView: View {
             set: { habit.startDay = Helpers.dateToString($0) }
         )
         let endDate = Binding(
-            get: { Helpers.stringToDate(habit.endDay) },
+            get: { Helpers.stringToDate(habit.endDay, fallback: Helpers.stringToDate(habit.startDay)) },
             set: { habit.endDay = Helpers.dateToString($0) }
         )
-        return Form {
-            Section(header: Text("Habit")) {
-                TextField("Title", text: $habit.title)
-                TextField("Description", text: $habit.description)
-            }
-            Section(header: Text("Dates")) {
-                DatePicker("Start Date", selection: startDate, in: ...endDate.wrappedValue, displayedComponents: [.date])
-                DatePicker("End Date", selection: endDate, in: startDate.wrappedValue...,
-                           displayedComponents: [.date])
-            }
-            Section() {
-                Button(action:{
-                    presentationMode.wrappedValue.dismiss()
-                }){
-                    Text("Done").foregroundColor(Color.primary).fontWeight(.semibold)
+        return ZStack(alignment: .bottom) {
+            Form {
+                Section(header: Text("Habit")) {
+                    TextField("Title", text: $habit.title)
+                    TextField("Description", text: $habit.description)
+                }
+                Section(header: Text("Dates")) {
+                    DatePicker("Start Date", selection: startDate, in: ...endDate.wrappedValue, displayedComponents: [.date])
+                    if habit.endDay == "" {
+                        Text("No end date")
+                        Button("Add End Date") {
+                            habit.endDay = habit.startDay
+                        }
+                    } else {
+                        DatePicker("End Date", selection: endDate, in: startDate.wrappedValue...,
+                                   displayedComponents: [.date])
+                        Button("No End Date") {
+                            habit.endDay = ""
+                        }
+                    }
+                }
+                Section() {
+                    Button("Done") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                Section() {
+                    Button("Delete", role: .destructive) {
+                        showingDeleteAlert = true
+                    }
+                }.alert("Are you sure you want to delete this habit ?", isPresented: $showingDeleteAlert) {
+                    Button("Cancel", role: .cancel) {
+                        showingDeleteAlert = false
+                    }
+                    Button("Delete", role: .destructive) {
+                        appState.delete(habit: habit)
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
             }
-            Section() {
-                Button("Delete", role: .destructive) {
-                    showingDeleteAlert = true
-                }
-            }.alert("Are you sure you want to delete this habit ?", isPresented: $showingDeleteAlert) {
-                Button("Cancel", role: .cancel) {
-                    showingDeleteAlert = false
-                }
-                Button("Delete", role: .destructive) {
-                    appState.delete(habit: habit)
-                    presentationMode.wrappedValue.dismiss()
-                }
-            }
+            Image("RaccoonFace")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
         }.navigationTitle("Edit")
             .onAppear {
                 habit.isEditing = true

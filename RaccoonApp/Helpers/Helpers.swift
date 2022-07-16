@@ -21,8 +21,8 @@ struct Helpers {
         return dateFromatter.string(from: date)
     }
     
-    static func stringToDate(_ string: String) -> Date {
-        return Calendar.current.startOfDay(for: dateFromatter.date(from: string) ?? Date())
+    static func stringToDate(_ string: String, fallback: Date? = nil) -> Date {
+        return Calendar.current.startOfDay(for: (dateFromatter.date(from: string) ?? fallback) ?? Date())
     }
     
     static func mockHabits() -> [Habit] {

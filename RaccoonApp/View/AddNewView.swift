@@ -14,6 +14,7 @@ struct AddNewView: View {
     @State var habit: Habit = Habit()
     @State var startDate: Date = Date()
     @State var endDate: Date = Date()
+    @State var noEndDate = false
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -24,27 +25,42 @@ struct AddNewView: View {
                 }
                 Section(header: Text("Dates")) {
                     DatePicker("Start Date", selection: $startDate, in: ...endDate, displayedComponents: [.date])
-                    DatePicker("End Date", selection: $endDate, in: startDate...,
-                               displayedComponents: [.date])
+                    if noEndDate {
+                        Text("No end date")
+                        Button("Add End Date") {
+                            noEndDate = false
+                        }
+                    } else {
+                        DatePicker("End Date", selection: $endDate, in: startDate...,
+                                   displayedComponents: [.date])
+                        Button("No End Date") {
+                            noEndDate = true
+                        }
+                    }
                 }
                 Section() {
-                    Button(action: {
+                    Button("Save"){
                         habit.startDay = Helpers.dateToString(startDate)
-                        habit.endDay = Helpers.dateToString(endDate)
+                        if noEndDate {
+                            habit.endDay = ""
+                        } else {
+                            habit.endDay = Helpers.dateToString(endDate)
+                        }
                         appState.add(habit: habit)
                         presentationMode.wrappedValue.dismiss()
-                    }){
-                        Text("Save").foregroundColor(Color.primary).fontWeight(.semibold)
                     }
-                    
                 }
             }
-            Image("RaccoonFace")
+            Image("StandingRaccoon2")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
         }
         .navigationTitle("Add a new habit")
+        .onAppear {
+            startDate = appState.viewingDate
+            endDate = appState.viewingDate
+        }
     }
 }
 

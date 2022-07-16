@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var appState: AppState
-    @State var date = Date()
     @State var showDatePicker = false
     
     var body: some View {
@@ -23,9 +22,10 @@ struct ContentView: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         if showDatePicker {
+                            Button("Go to today") { appState.viewingDate = Date() }
                             DatePicker(
                                 "Start Date",
-                                selection: $date,
+                                selection: $appState.viewingDate,
                                 displayedComponents: [.date]
                             )
                             .datePickerStyle(.graphical)
@@ -33,19 +33,15 @@ struct ContentView: View {
                             
                         }
                         Divider()
-                        ForEach(appState.habits) { habit in
-                            
-                            if habit.show(on: date) {
-                                HabitItem(habit: habit, date: $date)
-                            }
-                            
+                        ForEach(appState.habitsToShow) { habit in
+                            HabitItem(habit: habit, date: $appState.viewingDate)
                         }
                         Spacer()
                     }
                     .padding(12)
                     Spacer()
                 }
-            }.navigationBarTitle("\(Helpers.dateToString(date))").toolbar {
+            }.navigationBarTitle("\(Helpers.dateToString(appState.viewingDate))").toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         showDatePicker.toggle()
@@ -55,13 +51,11 @@ struct ContentView: View {
                         } else {
                             Image(systemName: "calendar")
                         }
-                    }.foregroundColor({
-                        showDatePicker ? .primary : .accentColor
-                    }())
+                    }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        date = Date()
+                        appState.viewingDate = Date()
                     }){
                         Image("RaccoonFace").resizable().frame(width: 36, height: 36, alignment: .leading)
                     }
