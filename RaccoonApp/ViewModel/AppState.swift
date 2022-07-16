@@ -20,14 +20,7 @@ class AppState: ObservableObject, Codable {
     @Published var habits: [Habit] = []
     var subscriptions = Set<AnyCancellable>()
     
-    init() {
-        habits = Helpers.mockHabits()
-        for habit in habits {
-            habit.objectWillChange
-                .sink(receiveValue: { [weak self] in self?.objectWillChange.send() })
-                .store(in: &subscriptions)
-        }
-    }
+    init() { }
     
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)

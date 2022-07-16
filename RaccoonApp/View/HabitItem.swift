@@ -24,11 +24,13 @@ struct HabitItem: View {
                                 .fontWeight(.medium)
                                 .lineLimit(5)
                                 .foregroundColor(.primary)
+                                .multilineTextAlignment(.leading)
                             Text(habit.description)
                                 .lineLimit(5)
+                                .multilineTextAlignment(.leading)
                         }
                         Spacer()
-                    }
+                    }.padding(.trailing, 34)
                 }.foregroundColor(.primary)
                 ZStack(alignment: .center) {
                     Color.white.frame(width: 50, height: 50)

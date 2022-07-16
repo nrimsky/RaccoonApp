@@ -59,6 +59,13 @@ struct ContentView: View {
                         showDatePicker ? .primary : .accentColor
                     }())
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        date = Date()
+                    }){
+                        Image("RaccoonFace").resizable().frame(width: 36, height: 36, alignment: .leading)
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: AddNewView()) {
                         Image(systemName: "plus")
