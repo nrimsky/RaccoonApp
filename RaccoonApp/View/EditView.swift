@@ -12,6 +12,7 @@ struct EditView: View {
     @ObservedObject var habit: Habit
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var appState: AppState
+    @State var showingDeleteAlert = false
     
     var body: some View {
         let startDate = Binding(
@@ -33,26 +34,33 @@ struct EditView: View {
                            displayedComponents: [.date])
             }
             Section() {
-                Button(action: {
+                Button(action:{
                     presentationMode.wrappedValue.dismiss()
                 }){
-                    Text("Done")
+                    Text("Done").foregroundColor(Color.primary).fontWeight(.semibold)
                 }
-                Button(action: {
+            }
+            Section() {
+                Button("Delete", role: .destructive) {
+                    showingDeleteAlert = true
+                }
+            }.alert("Are you sure you want to delete this habit ?", isPresented: $showingDeleteAlert) {
+                Button("Cancel", role: .cancel) {
+                    showingDeleteAlert = false
+                }
+                Button("Delete", role: .destructive) {
                     appState.delete(habit: habit)
                     presentationMode.wrappedValue.dismiss()
-                }){
-                    Text("Delete").foregroundColor(.red)
                 }
             }
         }.navigationTitle("Edit")
-        .onAppear {
-            habit.isEditing = true
-        }
-        .onDisappear {
-            try? appState.persist()
-            habit.isEditing = false
-        }
+            .onAppear {
+                habit.isEditing = true
+            }
+            .onDisappear {
+                try? appState.persist()
+                habit.isEditing = false
+            }
     }
 }
 

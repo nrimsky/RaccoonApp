@@ -15,30 +15,49 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack {
-                    if showDatePicker {
-                        DatePicker(
-                            "Start Date",
-                            selection: $date,
-                            displayedComponents: [.date]
-                        )
-                        .datePickerStyle(.graphical)
-                    }
-                    ForEach(appState.habits) { habit in
-                        if habit.show(on: date) {
-                            HabitItem(habit: habit, date: $date)
-                                .padding(4)
+            ZStack(alignment: .bottom) {
+                Image("StandingRaccoon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200)
+                ScrollView {
+                    VStack(spacing: 0) {
+                        if showDatePicker {
+                            DatePicker(
+                                "Start Date",
+                                selection: $date,
+                                displayedComponents: [.date]
+                            )
+                            .datePickerStyle(.graphical)
+                            .padding(6)
+                            
                         }
+                        Divider()
+                        ForEach(appState.habits) { habit in
+                            
+                            if habit.show(on: date) {
+                                HabitItem(habit: habit, date: $date)
+                            }
+                            
+                        }
+                        Spacer()
                     }
+                    .padding(12)
                     Spacer()
                 }
-                .padding(12)
-            }.navigationBarTitle(Helpers.dateToString(date)).toolbar {
+            }.navigationBarTitle("\(Helpers.dateToString(date))").toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         showDatePicker.toggle()
-                    }){Image(systemName: "calendar")}
+                    }){
+                        if showDatePicker {
+                            Text("Hide calendar")
+                        } else {
+                            Image(systemName: "calendar")
+                        }
+                    }.foregroundColor({
+                        showDatePicker ? .primary : .accentColor
+                    }())
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: AddNewView()) {

@@ -16,27 +16,35 @@ struct AddNewView: View {
     @State var endDate: Date = Date()
     
     var body: some View {
-        Form {
-            Section(header: Text("Habit")) {
-                TextField("Title", text: $habit.title)
-                TextField("Description", text: $habit.description)
-            }
-            Section(header: Text("Dates")) {
-                DatePicker("Start Date", selection: $startDate, in: ...endDate, displayedComponents: [.date])
-                DatePicker("End Date", selection: $endDate, in: startDate...,
-                           displayedComponents: [.date])
-            }
-            Section() {
-                Button(action: {
-                    habit.startDay = Helpers.dateToString(startDate)
-                    habit.endDay = Helpers.dateToString(endDate)
-                    appState.add(habit: habit)
-                    presentationMode.wrappedValue.dismiss()
-                }){
-                    Text("Save")
+        ZStack(alignment: .bottom) {
+            Form {
+                Section(header: Text("Habit")) {
+                    TextField("Title", text: $habit.title)
+                    TextField("Description", text: $habit.description)
+                }
+                Section(header: Text("Dates")) {
+                    DatePicker("Start Date", selection: $startDate, in: ...endDate, displayedComponents: [.date])
+                    DatePicker("End Date", selection: $endDate, in: startDate...,
+                               displayedComponents: [.date])
+                }
+                Section() {
+                    Button(action: {
+                        habit.startDay = Helpers.dateToString(startDate)
+                        habit.endDay = Helpers.dateToString(endDate)
+                        appState.add(habit: habit)
+                        presentationMode.wrappedValue.dismiss()
+                    }){
+                        Text("Save").foregroundColor(Color.primary).fontWeight(.semibold)
+                    }
+                    
                 }
             }
-        }.navigationTitle("Add a new habit")
+            Image("RaccoonFace")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+        }
+        .navigationTitle("Add a new habit")
     }
 }
 

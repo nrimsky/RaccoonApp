@@ -14,15 +14,41 @@ struct HabitItem: View {
     @EnvironmentObject var appState: AppState
     
     var body: some View {
-        HStack(alignment: .center, spacing: 2) {
-            NavigationLink(destination: EditView(habit: habit)) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(habit.title).lineLimit(5)
-                    Text(habit.description).lineLimit(5)
+        VStack {
+            ZStack(alignment: .trailing) {
+                NavigationLink(destination: EditView(habit: habit)) {
+                    HStack(alignment: .center, spacing: 2) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(habit.title)
+                                .font(.title2)
+                                .fontWeight(.medium)
+                                .lineLimit(5)
+                                .foregroundColor(.primary)
+                            Text(habit.description)
+                                .lineLimit(5)
+                        }
+                        Spacer()
+                    }
+                }.foregroundColor(.primary)
+                ZStack(alignment: .center) {
+                    Color.white.frame(width: 50, height: 50)
+                    if habit.wasAchievedOn(date) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.green)
+                        
+                    } else {
+                        Image(systemName:  "circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                        
+                    }
+                    
+                    
                 }
-            }.foregroundColor(.primary)
-            Spacer()
-            Image(systemName: habit.wasAchievedOn(date) ? "circle.fill" : "circle.dotted").frame(width: 30, height: 30)
                 .onTapGesture {
                     withAnimation {
                         if habit.wasAchievedOn(date) {
@@ -33,7 +59,9 @@ struct HabitItem: View {
                         try? appState.persist()
                     }
                 }
-        }
+            }
+            Divider()
+        }.padding([.top, .leading, .trailing], 6)
     }
 }
 
