@@ -19,6 +19,12 @@ struct Helpers {
         return formatter
     }()
     
+    static var dateFormatterMonth: DateFormatter  = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM yy"
+        return formatter
+    }()
+    
     static let persistenceManager = PersistenceManager()
     
     static func dateToString(_ date: Date) -> String {
@@ -27,6 +33,10 @@ struct Helpers {
     
     static func stringToDate(_ string: String, fallback: Date? = nil) -> Date {
         return Calendar.current.startOfDay(for: (dateFromatter.date(from: string) ?? fallback) ?? Date())
+    }
+    
+    static func dateToMonth(_ date: Date) -> String {
+        return dateFormatterMonth.string(from: date)
     }
     
     static func mockHabits() -> [Habit] {
@@ -45,7 +55,6 @@ struct Helpers {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-
 }
 
 extension Calendar {
@@ -55,5 +64,38 @@ extension Calendar {
         let numberOfDays = dateComponents([.day], from: fromDate, to: toDate) // <3>
         
         return numberOfDays.day!
+    }
+}
+
+extension Date
+{
+    mutating func addDays(n: Int)
+    {
+        let cal = Calendar.current
+        self = cal.date(byAdding: .day, value: n, to: self)!
+    }
+    
+    func firstDayOfTheMonth() -> Date {
+        return Calendar.current.date(from:
+                                        Calendar.current.dateComponents([.year,.month], from: self))!
+    }
+    
+    func getAllDays() -> [Date]
+    {
+        var days = [Date]()
+        
+        let calendar = Calendar.current
+        
+        let range = calendar.range(of: .day, in: .month, for: self)!
+        
+        var day = firstDayOfTheMonth()
+        
+        for _ in 1...range.count
+        {
+            days.append(day)
+            day.addDays(n: 1)
+        }
+        
+        return days
     }
 }

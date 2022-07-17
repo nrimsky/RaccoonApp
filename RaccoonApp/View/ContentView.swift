@@ -54,6 +54,13 @@ struct ContentView: View {
                     Spacer()
                 }
             }.navigationBarTitle("\(Helpers.dateToString(appState.viewingDate))").toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        appState.viewingDate = Date()
+                    }){
+                        Image("RaccoonFace").resizable().frame(width: 42, height: 42, alignment: .leading)
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if showDatePicker {
                         AppButton(type: .normal, onPress: {showDatePicker.toggle()}, text: "Hide calendar")
@@ -63,11 +70,9 @@ struct ContentView: View {
                         }
                     }
                 }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        appState.viewingDate = Date()
-                    }){
-                        Image("RaccoonFace").resizable().frame(width: 42, height: 42, alignment: .leading)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: StatsView()) {
+                        Image(systemName: "chart.bar")
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {

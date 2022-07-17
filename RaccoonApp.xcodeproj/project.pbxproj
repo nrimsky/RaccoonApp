@@ -23,6 +23,8 @@
 		A36D7D8428818E4F00B1C8A0 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8328818E4E00B1C8A0 /* PersistenceManager.swift */; };
 		A36D7D8728835E8D00B1C8A0 /* PatrickHand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36D7D8628835E8C00B1C8A0 /* PatrickHand-Regular.ttf */; };
 		A36D7D8A2883611C00B1C8A0 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D892883611C00B1C8A0 /* AppButton.swift */; };
+		A36D7D8C28848C5400B1C8A0 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8B28848C5300B1C8A0 /* StatsView.swift */; };
+		A36D7D8E2884BE7600B1C8A0 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		A36D7D8628835E8C00B1C8A0 /* PatrickHand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatrickHand-Regular.ttf"; sourceTree = "<group>"; };
 		A36D7D8828835EBA00B1C8A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A36D7D892883611C00B1C8A0 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		A36D7D8B28848C5300B1C8A0 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 				A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */,
 				A36D7D812880EBE700B1C8A0 /* EditView.swift */,
 				A36D7D892883611C00B1C8A0 /* AppButton.swift */,
+				A36D7D8B28848C5300B1C8A0 /* StatsView.swift */,
+				A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,9 +333,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36D7D8C28848C5400B1C8A0 /* StatsView.swift in Sources */,
 				A32BDC7528808AB3005E5F54 /* Habit.swift in Sources */,
 				A32BDC4D28808A85005E5F54 /* ContentView.swift in Sources */,
 				A36D7D822880EBE700B1C8A0 /* EditView.swift in Sources */,
+				A36D7D8E2884BE7600B1C8A0 /* BarChart.swift in Sources */,
 				A36D7D802880E6D300B1C8A0 /* AddNewView.swift in Sources */,
 				A32BDC4B28808A85005E5F54 /* RaccoonApp.swift in Sources */,
 				A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */,
@@ -502,6 +510,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -510,11 +519,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonHabits;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.Raccoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -533,6 +542,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -541,11 +551,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.RaccoonHabits;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.openurban.Raccoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

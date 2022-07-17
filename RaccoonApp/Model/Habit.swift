@@ -57,6 +57,15 @@ class Habit: Hashable, Identifiable, ObservableObject, Codable {
         achievedOn.remove(Helpers.dateToString(date))
     }
     
+    func monthData(referenceDate: Date) -> [ChartData] {
+        let days = referenceDate.getAllDays().map {
+            Helpers.dateToString($0)
+        }
+        return days.map {
+            ChartData(label: $0, value: achievedOn.contains($0))
+        }
+    }
+    
     func show(on date: Date) -> Bool {
         if isEditing {
             return true
