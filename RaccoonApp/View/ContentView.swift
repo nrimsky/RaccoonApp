@@ -37,14 +37,15 @@ struct ContentView: View {
                             )
                             .datePickerStyle(.graphical)
                             .frame(width: 300, height: 300)
-                            .padding([.leading, .trailing, .top], 24)
-                            .overlay (
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(.black, lineWidth: 1)
-                            )
-                            .padding(.bottom, 24)
+                            .padding(12)
                         }
                         Divider()
+                        if showHabits.count == 0 {
+                            Text("🦝 Hello there human! You haven't added any habits for this day yet. Press + to add a new habit.")
+                                .font(Font.custom(Helpers.fontName, size: 21))
+                                .foregroundColor(.gray)
+                                .padding(64)
+                        }
                         ForEach(showHabits) { habit in
                             HabitItem(habit: habit, date: $appState.viewingDate)
                         }

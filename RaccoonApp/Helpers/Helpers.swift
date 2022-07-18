@@ -21,7 +21,19 @@ struct Helpers {
     
     static var dateFormatterMonth: DateFormatter  = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM yy"
+        formatter.dateFormat = "MMM yyyy"
+        return formatter
+    }()
+    
+    static var monthShortFormatter: DateFormatter  = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM"
+        return formatter
+    }()
+    
+    static var yearShortFormatter: DateFormatter  = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyy"
         return formatter
     }()
     
@@ -67,10 +79,8 @@ extension Calendar {
     }
 }
 
-extension Date
-{
-    mutating func addDays(n: Int)
-    {
+extension Date {
+    mutating func addDays(n: Int) {
         let cal = Calendar.current
         self = cal.date(byAdding: .day, value: n, to: self)!
     }
@@ -80,8 +90,7 @@ extension Date
                                         Calendar.current.dateComponents([.year,.month], from: self))!
     }
     
-    func getAllDays() -> [Date]
-    {
+    func getAllDays() -> [Date] {
         var days = [Date]()
         
         let calendar = Calendar.current
@@ -97,5 +106,13 @@ extension Date
         }
         
         return days
+    }
+    
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
     }
 }

@@ -25,6 +25,7 @@
 		A36D7D8A2883611C00B1C8A0 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D892883611C00B1C8A0 /* AppButton.swift */; };
 		A36D7D8C28848C5400B1C8A0 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8B28848C5300B1C8A0 /* StatsView.swift */; };
 		A36D7D8E2884BE7600B1C8A0 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */; };
+		A36D7D902885F58300B1C8A0 /* YearMonthCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8F2885F58200B1C8A0 /* YearMonthCalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		A36D7D892883611C00B1C8A0 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		A36D7D8B28848C5300B1C8A0 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		A36D7D8F2885F58200B1C8A0 /* YearMonthCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonthCalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,13 +160,11 @@
 		A36D7D772880DB6600B1C8A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A36D7D942885F9F800B1C8A0 /* Stats */,
+				A36D7D932885F9F000B1C8A0 /* Edit */,
+				A36D7D922885F9E700B1C8A0 /* AddNew */,
+				A36D7D912885F9D600B1C8A0 /* Components */,
 				A32BDC4C28808A85005E5F54 /* ContentView.swift */,
-				A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */,
-				A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */,
-				A36D7D812880EBE700B1C8A0 /* EditView.swift */,
-				A36D7D892883611C00B1C8A0 /* AppButton.swift */,
-				A36D7D8B28848C5300B1C8A0 /* StatsView.swift */,
-				A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,6 +200,41 @@
 				A36D7D8628835E8C00B1C8A0 /* PatrickHand-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A36D7D912885F9D600B1C8A0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */,
+				A36D7D892883611C00B1C8A0 /* AppButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A36D7D922885F9E700B1C8A0 /* AddNew */ = {
+			isa = PBXGroup;
+			children = (
+				A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */,
+			);
+			path = AddNew;
+			sourceTree = "<group>";
+		};
+		A36D7D932885F9F000B1C8A0 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				A36D7D812880EBE700B1C8A0 /* EditView.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		A36D7D942885F9F800B1C8A0 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				A36D7D8F2885F58200B1C8A0 /* YearMonthCalendarView.swift */,
+				A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */,
+				A36D7D8B28848C5300B1C8A0 /* StatsView.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +377,7 @@
 				A32BDC4B28808A85005E5F54 /* RaccoonApp.swift in Sources */,
 				A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */,
 				A36D7D8428818E4F00B1C8A0 /* PersistenceManager.swift in Sources */,
+				A36D7D902885F58300B1C8A0 /* YearMonthCalendarView.swift in Sources */,
 				A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */,
 				A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */,
 				A36D7D8A2883611C00B1C8A0 /* AppButton.swift in Sources */,
