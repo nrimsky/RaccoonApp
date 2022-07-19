@@ -15,11 +15,9 @@ enum PersistenceError: Error {
 struct PersistenceManager {
     
     let fileName = "appData.json"
-    let jsonEncoder = JSONEncoder()
-    let jsonDecoder = JSONDecoder()
     
     func saveData(data: AppState) throws {
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first, let jsonData = try? jsonEncoder.encode(data), let text = String(data: jsonData, encoding: .utf8) {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first, let text = data.toJson() {
             let fileUrl = dir.appendingPathComponent(fileName)
             try? deleteData()
             do {
@@ -37,7 +35,7 @@ struct PersistenceManager {
             let fileURL = dir.appendingPathComponent(fileName)
             do {
                 let data = try Data(contentsOf: fileURL)
-                let res = try jsonDecoder.decode(AppState.self, from: data)
+                let res = try Helpers.decoder.decode(AppState.self, from: data)
                 return res
             } catch {
                 throw PersistenceError.noData

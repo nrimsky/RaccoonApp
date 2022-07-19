@@ -64,4 +64,15 @@ class AppState: ObservableObject, Codable {
         return try Helpers.persistenceManager.getData()
     }
     
+    func toJson() -> String? {
+        if let data = try? Helpers.encoder.encode(self) {
+            return String(data: data, encoding: .utf8)
+        }
+        return nil
+    }
+    
+    func toText() -> String {
+        return "RaccoonApp state \(Helpers.dateToString(Date())):\n\n\(habits.map {$0.toText()}.joined(separator: "\n"))"
+    }
+    
 }

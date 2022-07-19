@@ -12,6 +12,10 @@ struct Helpers {
     
     static let fontName = "PatrickHand-Regular"
     static let appFont = UIFont(name: Helpers.fontName, size: UIFont.labelFontSize)
+    static let encoder = JSONEncoder()
+    static let decoder = JSONDecoder()
+    
+    static var hapticGenerator = UIImpactFeedbackGenerator(style: .heavy)
     
     static var dateFromatter: DateFormatter  = {
         let formatter = DateFormatter()
@@ -66,6 +70,10 @@ struct Helpers {
     static func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
+    }
+    
+    static func format(score: Double) -> String {
+        return String(Double((score * 100.0).rounded())/100.0)
     }
 }
 

@@ -26,6 +26,7 @@
 		A36D7D8C28848C5400B1C8A0 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8B28848C5300B1C8A0 /* StatsView.swift */; };
 		A36D7D8E2884BE7600B1C8A0 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */; };
 		A36D7D902885F58300B1C8A0 /* YearMonthCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D8F2885F58200B1C8A0 /* YearMonthCalendarView.swift */; };
+		A36D7D9A288755DE00B1C8A0 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D99288755DE00B1C8A0 /* ActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		A36D7D8B28848C5300B1C8A0 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		A36D7D8F2885F58200B1C8A0 /* YearMonthCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonthCalendarView.swift; sourceTree = "<group>"; };
+		A36D7D99288755DE00B1C8A0 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				A36D7D8F2885F58200B1C8A0 /* YearMonthCalendarView.swift */,
 				A36D7D8D2884BE7600B1C8A0 /* BarChart.swift */,
 				A36D7D8B28848C5300B1C8A0 /* StatsView.swift */,
+				A36D7D99288755DE00B1C8A0 /* ActivityView.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				A36D7D8428818E4F00B1C8A0 /* PersistenceManager.swift in Sources */,
 				A36D7D902885F58300B1C8A0 /* YearMonthCalendarView.swift in Sources */,
 				A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */,
+				A36D7D9A288755DE00B1C8A0 /* ActivityView.swift in Sources */,
 				A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */,
 				A36D7D8A2883611C00B1C8A0 /* AppButton.swift in Sources */,
 			);

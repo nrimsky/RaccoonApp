@@ -20,6 +20,8 @@ struct StatsView: View {
     @State var currentHabit: Habit? = nil
     @State var chartType: ChartType = .week
     @State var dateRange: Range<Date> = Range<Date>(uncheckedBounds: (Date().startOfMonth(), Date().endOfMonth()))
+    @State var showDownload: Bool = false
+    let encoder = JSONEncoder()
     
     func show(habit: Habit) -> Bool {
         if Helpers.stringToDate(habit.startDay) <= dateRange.upperBound {
@@ -36,27 +38,46 @@ struct StatsView: View {
     
     var body: some View {
         return ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 8) {
                 YearMonthCalendarView(dateRange: $dateRange)
                 if let habitStats = currentHabit?.monthData(referenceDate: dateRange.lowerBound) {
                     Text(currentHabit?.title ?? "")
+                        .font(Font.custom(Helpers.fontName, size: 24))
+                    Text("\(Helpers.dateToMonth(dateRange.lowerBound)): \(Helpers.format(score: currentHabit?.monthScore(referenceDate: dateRange.lowerBound) ?? 0))%")
                         .font(Font.custom(Helpers.fontName, size: 21))
                     BarChart(barColor: .accentColor, data: habitStats)
+                } else {
+                    Text("🦝 This month doesn't have any habits yet. Go back and press + to add a new habit.")
+                        .font(Font.custom(Helpers.fontName, size: 21))
+                        .foregroundColor(.gray)
+                        .padding(64)
                 }
             }.padding([.leading, .trailing, .bottom], 20)
+                .onAppear {
+                    currentHabit = appState.habits.first(where: show)
+                }
         }
-        .navigationTitle("\(Helpers.dateToMonth(dateRange.lowerBound)) month overview")
+        .navigationTitle("Overview")
         .toolbar {
-            Menu("Select habit") {
-                ForEach(appState.habits) { habit in
-                    if show(habit: habit) {
-                        AppButton(type: .normal, onPress: { currentHabit = habit }, text: habit.title)
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu("Select habit") {
+                    ForEach(appState.habits) { habit in
+                        if show(habit: habit) {
+                            AppButton(type: .normal, onPress: { currentHabit = habit }, text: habit.title)
+                        }
                     }
                 }
             }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    showDownload = true
+                }, label: {
+                    Image(systemName: "square.and.arrow.up")
+                })
+            }
         }
-        .onAppear {
-            currentHabit = appState.habits.first(where: show)
+        .sheet(isPresented: $showDownload) {
+            ActivityView(text: appState.toText())
         }
     }
 }

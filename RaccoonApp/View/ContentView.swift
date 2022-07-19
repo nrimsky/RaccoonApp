@@ -73,7 +73,7 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: StatsView()) {
-                        Image(systemName: "chart.bar")
+                        Image(systemName: "chart.bar.doc.horizontal")
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {

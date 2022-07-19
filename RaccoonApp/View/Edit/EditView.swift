@@ -26,7 +26,7 @@ struct EditView: View {
         return ZStack(alignment: .bottom) {
             Form {
                 Section(header: Text("Habit")) {
-                    TextField("What do you want to get done?", text: $habit.title).font(Font.custom(Helpers.fontName, size: UIFont.labelFontSize))
+                    TextField("Something you want to do every day", text: $habit.title).font(Font.custom(Helpers.fontName, size: UIFont.labelFontSize))
                 }
                 Section(header: Text("Dates")) {
                     DatePicker("Start Date", selection: startDate, in: ...endDate.wrappedValue, displayedComponents: [.date])

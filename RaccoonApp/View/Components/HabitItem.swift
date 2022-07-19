@@ -55,6 +55,7 @@ struct HabitItem: View {
                             habit.markAchieved(on: date)
                         }
                         try? appState.persist()
+                        Helpers.hapticGenerator.impactOccurred()
                     }
                 }
             }

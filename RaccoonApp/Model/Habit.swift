@@ -66,6 +66,16 @@ class Habit: Hashable, Identifiable, ObservableObject, Codable {
         }
     }
     
+    func monthScore(referenceDate: Date) -> Double {
+        let days = referenceDate.getAllDays().map {
+            Helpers.dateToString($0)
+        }
+        let acheived = days.filter {
+            achievedOn.contains($0)
+        }
+        return Double(acheived.count) / Double(days.count)
+    }
+    
     func show(on date: Date) -> Bool {
         if isEditing {
             return true
@@ -79,6 +89,10 @@ class Habit: Hashable, Identifiable, ObservableObject, Codable {
             }
         }
         return true
+    }
+    
+    func toText() -> String {
+        return "Habit: \(title)\nStart day: \(startDay)\nEnd day: \(endDay)\nWas achieved on: \(achievedOn.description)\n"
     }
     
     enum CodingKeys: String, CodingKey {
