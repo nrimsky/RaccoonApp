@@ -73,7 +73,7 @@ struct Helpers {
     }
     
     static func format(score: Double) -> String {
-        return String(Double((score * 100.0).rounded())/100.0)
+        return String(Double((score * 100.0).rounded()))
     }
 }
 
