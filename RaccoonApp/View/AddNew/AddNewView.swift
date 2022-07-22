@@ -46,7 +46,7 @@ struct AddNewView: View {
                     }, text: "Save")
                 }
             }
-            Image("StandingRaccoon2")
+            Image("HandsUpRaccoon")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
