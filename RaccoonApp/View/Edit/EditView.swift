@@ -23,21 +23,22 @@ struct EditView: View {
             get: { Helpers.stringToDate(habit.endDay, fallback: Helpers.stringToDate(habit.startDay)) },
             set: { habit.endDay = Helpers.dateToString($0) }
         )
+        let noEndDate = Binding(get: {
+            habit.endDay == ""
+        }, set: {
+            if $0 {
+                habit.endDay = ""
+            } else {
+                habit.endDay = habit.startDay
+            }
+        })
         return ZStack(alignment: .bottom) {
             Form {
                 Section(header: Text("Habit")) {
                     TextField("Something you want to do every day", text: $habit.title).font(Font.custom(Helpers.fontName, size: UIFont.labelFontSize))
                 }
                 Section(header: Text("Dates")) {
-                    DatePicker("Start Date", selection: startDate, in: ...endDate.wrappedValue, displayedComponents: [.date])
-                    if habit.endDay == "" {
-                        Text("No end date")
-                        AppButton(type: .normal, onPress: {habit.endDay = habit.startDay}, text: "Add End Date")
-                    } else {
-                        DatePicker("End Date", selection: endDate, in: startDate.wrappedValue...,
-                                   displayedComponents: [.date])
-                        AppButton(type: .normal, onPress: {habit.endDay = ""}, text: "No End Date")
-                    }
+                    DateStartEndPicker(startDate: startDate, endDate: endDate, noEndDate: noEndDate)
                 }
                 Section() {
                     AppButton(type: .normal, onPress: {presentationMode.wrappedValue.dismiss()}, text: "Done")

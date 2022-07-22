@@ -23,15 +23,7 @@ struct AddNewView: View {
                     TextField("Something you want to do every day", text: $habit.title).font(Font.custom(Helpers.fontName, size: UIFont.labelFontSize))
                 }
                 Section(header: Text("Dates")) {
-                    DatePicker("Start Date", selection: $startDate, in: ...endDate, displayedComponents: [.date])
-                    if noEndDate {
-                        Text("No end date")
-                        AppButton(type: .normal, onPress: {noEndDate = false}, text: "Add End Date")
-                    } else {
-                        DatePicker("End Date", selection: $endDate, in: startDate...,
-                                   displayedComponents: [.date])
-                        AppButton(type: .normal, onPress: {noEndDate = true}, text: "No End Date")
-                    }
+                    DateStartEndPicker(startDate: $startDate, endDate: $endDate, noEndDate: $noEndDate)
                 }
                 Section() {
                     AppButton(type: .normal, onPress: {

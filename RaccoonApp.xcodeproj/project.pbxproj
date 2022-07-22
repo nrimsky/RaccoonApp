@@ -16,6 +16,7 @@
 		A32BDC6828808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC6728808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift */; };
 		A32BDC7528808AB3005E5F54 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC7428808AB3005E5F54 /* Habit.swift */; };
 		A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BDC7628808BB3005E5F54 /* AppState.swift */; };
+		A34DA6AA288B5DB5006A2F65 /* DateStartEndPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DA6A9288B5DB5006A2F65 /* DateStartEndPicker.swift */; };
 		A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D752880BA4C00B1C8A0 /* Helpers.swift */; };
 		A36D7D7E2880DBF600B1C8A0 /* HabitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */; };
 		A36D7D802880E6D300B1C8A0 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */; };
@@ -59,6 +60,7 @@
 		A32BDC6728808A8A005E5F54 /* RaccoonAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaccoonAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A32BDC7428808AB3005E5F54 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		A32BDC7628808BB3005E5F54 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A34DA6A9288B5DB5006A2F65 /* DateStartEndPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStartEndPicker.swift; sourceTree = "<group>"; };
 		A36D7D752880BA4C00B1C8A0 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitItem.swift; sourceTree = "<group>"; };
 		A36D7D7F2880E6D300B1C8A0 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				A36D7D7D2880DBF600B1C8A0 /* HabitItem.swift */,
 				A36D7D892883611C00B1C8A0 /* AppButton.swift */,
+				A34DA6A9288B5DB5006A2F65 /* DateStartEndPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				A32BDC4B28808A85005E5F54 /* RaccoonApp.swift in Sources */,
 				A36D7D762880BA4C00B1C8A0 /* Helpers.swift in Sources */,
 				A36D7D8428818E4F00B1C8A0 /* PersistenceManager.swift in Sources */,
+				A34DA6AA288B5DB5006A2F65 /* DateStartEndPicker.swift in Sources */,
 				A36D7D902885F58300B1C8A0 /* YearMonthCalendarView.swift in Sources */,
 				A32BDC7728808BB3005E5F54 /* AppState.swift in Sources */,
 				A36D7D9A288755DE00B1C8A0 /* ActivityView.swift in Sources */,
