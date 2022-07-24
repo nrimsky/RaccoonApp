@@ -23,8 +23,8 @@ struct YearMonthCalendarView: View {
                         .foregroundColor(.white)
                         .frame(width: 24.0)
                         .onTapGesture {
-                            selectedYear -= 1;
-                            selectedMonth = ""
+                            selectedYear -= 1
+                            setPeriod(selectedMonth: selectedMonth)
                         }
                     Text(String(selectedYear)).foregroundColor(.white).font(Font.custom(Helpers.fontName, size: 21))
                         .transition(.move(edge: .trailing))
@@ -33,8 +33,8 @@ struct YearMonthCalendarView: View {
                         .foregroundColor(.white)
                         .frame(width: 24.0)
                         .onTapGesture {
-                            selectedYear += 1;
-                            selectedMonth = ""
+                            selectedYear += 1
+                            setPeriod(selectedMonth: selectedMonth)
                         }
                 }.padding(.all, 12.0)
                     .background(Color.accentColor)
