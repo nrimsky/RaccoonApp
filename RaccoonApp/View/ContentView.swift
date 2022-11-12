@@ -39,7 +39,7 @@ struct ContentView: View {
                             .frame(width: 300, height: 300)
                             .padding(12)
                         }
-                        Divider()
+                        Divider().padding([.leading, .trailing], 6)
                         if showHabits.count == 0 {
                             Text("🦝 Hello there human! You haven't added any habits for this day yet. Press + to add a new habit.")
                                 .font(Font.custom(Helpers.fontName, size: 21))

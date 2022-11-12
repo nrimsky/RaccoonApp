@@ -14,7 +14,7 @@ struct HabitItem: View {
     @EnvironmentObject var appState: AppState
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack(alignment: .trailing) {
                 NavigationLink(destination: EditView(habit: habit)) {
                     HStack(alignment: .center, spacing: 2) {
@@ -58,9 +58,9 @@ struct HabitItem: View {
                         Helpers.hapticGenerator.impactOccurred()
                     }
                 }
-            }
+            }.padding([.top, .bottom], 6)
             Divider()
-        }.padding([.top, .leading, .trailing], 6)
+        }.padding([.leading, .trailing], 6)
     }
 }
 
