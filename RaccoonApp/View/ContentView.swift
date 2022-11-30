@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var appState: AppState
+    @Environment(\.scenePhase) var scenePhase
     @State var showDatePicker = false
     
     var body: some View {
@@ -82,6 +83,10 @@ struct ContentView: View {
                     }
                 }
                 
+            }.onChange(of: scenePhase) { newPhase in
+                if newPhase == .active {
+                    appState.viewingDate = Date()
+                }
             }
         }
     }
