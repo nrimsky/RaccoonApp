@@ -17,7 +17,7 @@ struct ContentView: View {
         let showHabits = appState.habits.filter{$0.show(on: appState.viewingDate) }
         return NavigationView {
             ZStack(alignment: .bottom) {
-                if showHabits.filter {!$0.wasAchievedOn(appState.viewingDate)}.count == 0 {
+                if showHabits.filter({!$0.wasAchievedOn(appState.viewingDate)}).count == 0 {
                     Image("StandingRaccoon")
                         .resizable()
                         .scaledToFit()
@@ -88,12 +88,28 @@ struct ContentView: View {
                     appState.viewingDate = Date()
                 }
             }
-        }
+        }.errorAlert(error: $appState.currentError)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        return ContentView().environmentObject(AppState())
+        Group {
+            ContentView()
+                .environmentObject(AppState())
+                .previewDisplayName("Normal State")
+            
+            ContentView()
+                .environmentObject(AppState.mockWithError(.deletionFailed))
+                .previewDisplayName("Deletion Error")
+            
+            ContentView()
+                .environmentObject(AppState.mockWithError(.persistenceFailed))
+                .previewDisplayName("Persistence Error")
+            
+            ContentView()
+                .environmentObject(AppState.mockWithError(.loadingFailed))
+                .previewDisplayName("Loading Error")
+        }
     }
 }

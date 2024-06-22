@@ -55,10 +55,10 @@ struct EditView: View {
                     }
                 }
             }
-            Image("StandingRaccoon2")
+            Image("StandingRaccoon3")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100, height: 100)
+                .frame(width: 150, height: 150)
         }.navigationTitle("Edit")
             .onAppear {
                 habit.isEditing = true
@@ -66,12 +66,20 @@ struct EditView: View {
             .onDisappear {
                 try? appState.persist()
                 habit.isEditing = false
-            }
+            }.errorAlert(error: $appState.currentError)
     }
 }
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView(habit: Helpers.mockHabits()[0])
+        Group {
+            EditView(habit: Helpers.mockHabits()[0])
+                .environmentObject(AppState())
+                .previewDisplayName("Normal State")
+            
+            EditView(habit: Helpers.mockHabits()[0])
+                .environmentObject(AppState.mockWithError(.deletionFailed))
+                .previewDisplayName("Deletion Error")
+        }
     }
 }

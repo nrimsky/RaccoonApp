@@ -17,17 +17,25 @@ struct PersistenceManager {
     let fileName = "appData.json"
     
     func saveData(data: AppState) throws {
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first, let text = data.toJson() {
-            let fileUrl = dir.appendingPathComponent(fileName)
-            try? deleteData()
-            do {
-                try text.write(to: fileUrl, atomically: false, encoding: .utf8)
-                return
-            } catch {
-                throw PersistenceError.other
-            }
+        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first,
+              let text = data.toJson() else {
+            throw PersistenceError.other
         }
-        throw PersistenceError.other
+        
+        let tempFileUrl = dir.appendingPathComponent(fileName + ".temp")
+        let fileUrl = dir.appendingPathComponent(fileName)
+        
+        do {
+            try text.write(to: tempFileUrl, atomically: true, encoding: .utf8)
+            if FileManager.default.fileExists(atPath: fileUrl.path) {
+                try FileManager.default.removeItem(at: fileUrl)
+            }
+            try FileManager.default.moveItem(at: tempFileUrl, to: fileUrl)
+            print("Data saved successfully")
+        } catch {
+            print("Error saving data: \(error)")
+            throw error
+        }
     }
     
     func getData() throws -> AppState {
