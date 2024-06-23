@@ -30,8 +30,6 @@ enum AppError: Error, Identifiable {
 
 class AppState: ObservableObject, Codable {
     
-    static let persistFilename = "appState.json"
-    
     @Published var habits: [Habit] = []
     @Published var habitsToShow: [Habit] = []
     @Published var viewingDate: Date = Date()
@@ -97,6 +95,9 @@ class AppState: ObservableObject, Codable {
                 print("Warning: Loaded AppState has no habits")
             }
             return loadedState
+        } catch PersistenceError.noData {
+            print("No existing data found, creating new AppState")
+            return AppState()
         } catch {
             print("Error loading AppState: \(error)")
             let newState = AppState()

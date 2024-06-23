@@ -41,11 +41,17 @@ struct PersistenceManager {
     func getData() throws -> AppState {
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let fileURL = dir.appendingPathComponent(fileName)
-            do {
-                let data = try Data(contentsOf: fileURL)
-                let res = try Helpers.decoder.decode(AppState.self, from: data)
-                return res
-            } catch {
+            if FileManager.default.fileExists(atPath: fileURL.path) {
+                do {
+                    let data = try Data(contentsOf: fileURL)
+                    let res = try Helpers.decoder.decode(AppState.self, from: data)
+                    return res
+                } catch {
+                    print("Error decoding data: \(error)")
+                    throw PersistenceError.noData
+                }
+            } else {
+                print("No existing data file found")
                 throw PersistenceError.noData
             }
         }
